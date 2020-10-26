@@ -1,5 +1,5 @@
 const path = require('path')
-const isProd = process.env.NODE_ENV === 'production'
+// const isProd = process.env.NODE_ENV === 'production'
 const webpack = require('webpack')
 const BundleTracker = require('webpack-bundle-tracker')
 
@@ -26,7 +26,8 @@ function loadGlobalStyles() {
 }
 
 module.exports = {
-  publicPath: isProd ? '/static/dist' : 'http://localhost:8080/dist',
+//   publicPath: isProd ? '/static/dist' : 'http://localhost:8080/dist',
+  publicPath:'http://localhost:8080/dist',
   outputDir: settings.distDir,
   css: {
     loaderOptions: {
@@ -68,14 +69,14 @@ module.exports = {
         filename: 'webpack-stats.json'
       })
     )
-    config.plugins.push(
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'windows.$': 'jquery',
-        'windows.jQuery': 'jquery',
-        'windows.JQuery': 'jquery'
-      })
-    )
+    // config.plugins.push(
+    //   new webpack.ProvidePlugin({
+    //     $: 'jquery',
+    //     jQuery: 'jquery',
+    //     'windows.$': 'jquery',
+    //     'windows.jQuery': 'jquery',
+    //     'windows.JQuery': 'jquery'
+    //   })
+    // )
   }
 }
