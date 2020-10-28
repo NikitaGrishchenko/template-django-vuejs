@@ -1,5 +1,5 @@
-{% load render_bundle from webpack_loader %}
 {% load static %}
+{% load render_bundle from webpack_loader %}
 <!DOCTYPE html>
 <html lang="ru">
   <head>
@@ -18,20 +18,31 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Material+Icons"
     />
+  {% render_bundle 'main' 'css' %}
   {% render_bundle 'app' 'css' %}
+  {% render_bundle 'chunk-vendors' 'css' %}
   </head>
   <body>
   {% csrf_token%}
-    <noscript>
-      <strong
-        >We're sorry but frontend doesn't work properly without JavaScript
-        enabled. Please enable it to continue.</strong
-      >
-    </noscript>
-    <div id="app">
-      <app></app>
-    </div>
+
+
+      <app id="app">
+      <header class="header">
+        {% block header %}
+        {% endblock header %}
+      </header>
+      <main class="main">
+        {% block content %}
+        {% endblock content %}
+      </main>
+      <footer class="footer">
+        {% block footer %}
+        {% endblock footer %}
+      </footer>
+      </app>
+
+
     <!-- built files will be auto injected -->
-   {% render_bundle 'app' 'js' %}
+   {% render_bundle 'main' 'js' %}
   </body>
 </html>
