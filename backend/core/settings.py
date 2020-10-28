@@ -14,11 +14,15 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
-FRONTEND_DIR = os.path.join(BASE_DIR, "frontend")
+BASE_DIR = Path(__file__).resolve().parent.parent
+CONFIG_DIR = os.path.dirname(os.path.abspath(__file__))
+BACKEND_DIR = os.path.dirname(CONFIG_DIR)
+PROJECT_DIR = os.path.dirname(BACKEND_DIR)
+FRONTEND_DIR = os.path.join(PROJECT_DIR, "frontend")
 STATIC_DIR = os.path.join(FRONTEND_DIR, "static")
 TEMPLATES_DIR = os.path.join(FRONTEND_DIR, "templates")
-
+DIST_DIR = os.path.join(STATIC_DIR, "dist")
+WEBPACK_STATS_FILE = os.path.join(DIST_DIR, "webpack-stats.json")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -122,9 +126,11 @@ USE_TZ = True
 
 WEBPACK_LOADER = {
     "DEFAULT": {
-        "CACHE": DEBUG,
-        "BUNDLE_DIR_NAME": "/bundles/",  # must end with slash
-        "STATS_FILE": os.path.join(FRONTEND_DIR, "webpack-stats.json"),
+        "BUNDLE_DIR_NAME": "dist/",
+        "STATS_FILE": WEBPACK_STATS_FILE,
+        "POLL_INTERVAL": 0.1,
+        "TIMEOUT": None,
+        "IGNORE": [r".+\.hot-update.js", r".+\.map"],
     }
 }
 
