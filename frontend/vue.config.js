@@ -39,7 +39,7 @@ module.exports = {
   },
   chainWebpack: (config) => {
     config
-      .entry("app")
+      .entry("main")
       .clear()
       .add("./src/main.js")
       .end();

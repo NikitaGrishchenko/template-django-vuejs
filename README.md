@@ -1,11 +1,11 @@
 "DJANGO + VUE"
 
-python3 -m venv venv – создание виртуального окружения
-source venv/bin/activate – активация виртуального окружения Linux
-venv/Scripts/activate – активация виртуального окружения Windows
+python3 -m venv .venv – создание виртуального окружения
+source .venv/bin/activate – активация виртуального окружения Linux
+.venv/Scripts/activate – активация виртуального окружения Windows
 pip install -r requirements.txt – установка зависимостей из requirements.txt
-pip freeze – установленные модули
-pip freeze > requirements.txt – чтобы сохранить их в файл
+pip freeze – вывести установленные модули в консоль
+pip freeze > requirements.txt – сохранить установленные модули в файл
 (cd frontend) yarn install – установк зависимостей для frontend
 
 yarn serve – старт сервера Vue
