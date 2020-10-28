@@ -8,7 +8,7 @@ source .venv/bin/activate – активация виртуального окр
 pip install -r requirements.txt – установка зависимостей из requirements.txt
 pip freeze – вывести установленные модули в консоль
 pip freeze > requirements.txt – сохранить установленные модули в файл
-(cd frontend) yarn install – установк зависимостей для frontend
+(cd frontend) yarn – установк зависимостей для frontend
 ```
 
 ```
@@ -21,5 +21,5 @@ python ./backend/manage.py runserver – старт сервера Django
 
 python ./backend/manage.py makemigrations – применить миграции
 python ./backend/manage.py migrate – выполнить миграции
-evernote linux - Поиск в Googleevernote linux - Поиск в Googleevernote linux - Поиск в Google
+
 ```

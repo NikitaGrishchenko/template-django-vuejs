@@ -18,9 +18,10 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Material+Icons"
     />
-
+  {% render_bundle 'app' 'css' %}
   </head>
   <body>
+  {% csrf_token%}
     <noscript>
       <strong
         >We're sorry but frontend doesn't work properly without JavaScript
@@ -31,6 +32,6 @@
       <app></app>
     </div>
     <!-- built files will be auto injected -->
-   {% render_bundle 'main' %}
+   {% render_bundle 'app' 'js' %}
   </body>
 </html>
