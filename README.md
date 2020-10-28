@@ -1,4 +1,6 @@
-"DJANGO + VUE"
+# DJANGO & VUE TEMPLATE
+
+```
 
 python3 -m venv .venv – создание виртуального окружения
 source .venv/bin/activate – активация виртуального окружения Linux
@@ -7,10 +9,17 @@ pip install -r requirements.txt – установка зависимостей 
 pip freeze – вывести установленные модули в консоль
 pip freeze > requirements.txt – сохранить установленные модули в файл
 (cd frontend) yarn install – установк зависимостей для frontend
+```
+
+```
 
 yarn serve – старт сервера Vue
 python ./backend/manage.py runserver – старт сервера Django
+```
+
+```
 
 python ./backend/manage.py makemigrations – применить миграции
 python ./backend/manage.py migrate – выполнить миграции
 evernote linux - Поиск в Googleevernote linux - Поиск в Googleevernote linux - Поиск в Google
+```
