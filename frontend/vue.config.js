@@ -9,7 +9,7 @@ function initConfig() {
   return {
     staticDir: staticDir,
     templatesDir: templatesDir,
-    jsDir: path.join(frontendDir, "src"),
+    jsDir: path.join(frontendDir, "js"),
     distDir: path.join(staticDir, "dist"),
     sassDir: path.join(frontendDir, "sass"),
     webpackStatsDir: path.join("static", "dist"),
@@ -25,6 +25,11 @@ module.exports = {
   outputDir: settings.distDir,
 
   chainWebpack: config => {
+    config
+      .entry("app")
+      .clear()
+      .add("./js/main.js")
+      .end();
     config
       .plugin("BundleTracker")
       .use(BundleTracker, [
