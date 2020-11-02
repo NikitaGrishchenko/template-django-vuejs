@@ -3,7 +3,7 @@ const BundleTracker = require("webpack-bundle-tracker");
 
 // Config
 function initConfig() {
-  const frontendDir = __dirname;
+  const frontendDir = path.join(__dirname, "frontend");
   const staticDir = path.join(frontendDir, "static");
   const templatesDir = path.join(frontendDir, "templates");
   return {
@@ -12,7 +12,7 @@ function initConfig() {
     jsDir: path.join(frontendDir, "js"),
     distDir: path.join(staticDir, "dist"),
     sassDir: path.join(frontendDir, "sass"),
-    webpackStatsDir: path.join("static", "dist"),
+    webpackStatsDir: path.join("frontend", "static", "dist"),
     globalStyles: []
   };
 }
@@ -28,7 +28,7 @@ module.exports = {
     config
       .entry("app")
       .clear()
-      .add("./js/main.js")
+      .add("./frontend/js/main.js")
       .end();
     config
       .plugin("BundleTracker")
