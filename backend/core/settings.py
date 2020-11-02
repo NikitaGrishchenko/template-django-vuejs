@@ -128,9 +128,6 @@ WEBPACK_LOADER = {
     "DEFAULT": {
         "BUNDLE_DIR_NAME": "dist/",
         "STATS_FILE": WEBPACK_STATS_FILE,
-        "POLL_INTERVAL": 0.1,
-        "TIMEOUT": None,
-        "IGNORE": [r".+\.hot-update.js", r".+\.map"],
     }
 }
 
@@ -141,6 +138,4 @@ WEBPACK_LOADER = {
 
 STATIC_URL = "/static/"
 
-STATICFILES_DIRS = [
-    STATIC_DIR,
-]
+STATICFILES_DIRS = [STATIC_DIR, DIST_DIR]

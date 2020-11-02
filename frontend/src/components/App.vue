@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="sass">
-@import '../../static/sass/app'
+// @import '../../static/sass/app'
 body
   color: red
 </style>
