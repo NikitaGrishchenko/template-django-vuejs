@@ -4,7 +4,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Title</title>
+    {% render_bundle 'app' 'css'%}
   </head>
   <body>
     {% csrf_token%}
@@ -19,6 +20,6 @@
 
     </div>
 
-    {% render_bundle 'app' %}
+    {% render_bundle 'app' 'js'%}
   </body>
 </html>

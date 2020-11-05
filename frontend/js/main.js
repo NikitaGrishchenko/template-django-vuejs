@@ -1,5 +1,7 @@
 import Vue from "vue";
 import "./components";
+import "./plugins";
+import "bootstrap";
 // import router from "./router";
 // import store from "./store";
 

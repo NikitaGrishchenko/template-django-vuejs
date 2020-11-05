@@ -1,6 +1,11 @@
 # DJANGO & VUE TEMPLATE
 
 ```
+make install – установка всех зависимостей
+make run – запуск серверов
+make createadmin – создание админа
+make migrate – миграции
+
 python3 -m venv .venv – создание виртуального окружения
 source .venv/bin/activate – активация виртуального окружения Linux
 .venv/Scripts/activate – активация виртуального окружения Windows
