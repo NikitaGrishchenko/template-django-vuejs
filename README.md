@@ -21,4 +21,8 @@ python ./backend/manage.py runserver – старт сервера Django
 python ./backend/manage.py makemigrations – применить миграции
 python ./backend/manage.py migrate – выполнить миграции
 
+Создание приложения example
+1. создать папку example в backend/apps
+2. cd backend
+3. django-admin startapp example apps/example
 ```

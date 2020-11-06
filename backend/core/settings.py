@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "webpack_loader",
+    "rest_framework",
+    "apps.www",
 ]
 
 MIDDLEWARE = [
@@ -139,3 +141,12 @@ WEBPACK_LOADER = {
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [STATIC_DIR, DIST_DIR]
+
+# REST API
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
+    ]
+}
