@@ -6,9 +6,12 @@ make run – запуск серверов
 make createadmin – создание админа
 make migrate – миграции
 
-python3 -m venv .venv – создание виртуального окружения
+python3 -m venv .venv – создание виртуального окружения Linux
 source .venv/bin/activate – активация виртуального окружения Linux
+
+python -m venv .venv – создание виртуального окружения Windows
 .venv/Scripts/activate – активация виртуального окружения Windows
+
 pip freeze – вывести установленные модули в консоль
 pip freeze > requirements.txt – сохранить установленные модули в файл
 
