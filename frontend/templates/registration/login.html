@@ -1,0 +1,25 @@
+{% extends  'base.html' %}
+{% load  static  %}
+{% load  widget_tweaks %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    <h1>Ошибка</h1>
+    <p>Вы уже авторизованы</p>
+  {% else %}
+    <form method="post">
+      {% csrf_token %}
+      {% render_field form.username class="login-input login-input--username" placeholder="Имя пользователя" %}
+      {% render_field form.password class="login-input login-input--password" placeholder="Пароль" %}
+      <button type="submit">Войти</button>
+    </form>
+    {% if form.errors %}
+      <p>Вы неверно ввели имя пользователя или пароль</p>
+    {% endif %}
+    <a href="{% url 'signup' %}">Регистрация</a>
+    <a href="#">Забыли пароль?</a>
+  {% endif %}
+{% endblock content %}
+
+
+

@@ -6,7 +6,16 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-3">lhlh jhb hvyg vnghv ng</div>
+    <div class="col-12">
+      {% if user.is_authenticated %}
+        Привет, {{user.username}}
+        <a class="mb-3" href="/auth/logout/">
+          Выйти
+        </a>
+      {% else%}
+      Вы не авторизированы
+      {% endif %}
+    </div>
   </div>
 </div>
 

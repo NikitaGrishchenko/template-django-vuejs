@@ -17,14 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 from django.conf.urls import include
+from .views import HomeView, PageLoaderView
 
 urlpatterns = [
     path("dj-admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
-    path("api/v1/www/", include("apps.www.v1.urls")),
+    path("auth/", include("django.contrib.auth.urls")),
+    path("auth/", include("apps.user_auth.urls")),
+    path("<slug:template>/", PageLoaderView.as_view(), name="page"),
     path(
         "",
-        TemplateView.as_view(template_name="index.html"),
+        HomeView.as_view(template_name="index.html"),
         name="home",
     ),
 ]

@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "webpack_loader",
     "rest_framework",
-    "apps.www",
+    "apps.user_auth",
+    "widget_tweaks",
 ]
 
 MIDDLEWARE = [
@@ -110,6 +111,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Auth
+
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
