@@ -10,7 +10,7 @@ python3 -m venv .venv – создание виртуального окруже
 source .venv/bin/activate – активация виртуального окружения Linux
 
 python -m venv .venv – создание виртуального окружения Windows
-.venv/Scripts/activate – активация виртуального окружения Windows
+source .venv/Scripts/activate – активация виртуального окружения Windows
 
 pip freeze – вывести установленные модули в консоль
 pip freeze > requirements.txt – сохранить установленные модули в файл
@@ -28,4 +28,13 @@ python ./backend/manage.py migrate – выполнить миграции
 1. создать папку example в backend/apps
 2. cd backend
 3. django-admin startapp example apps/example
+```
+# TASK
+```
+[ ] Пакетный менеджер pipenv
+[ ] Написать скрипт для создания приложений в папке apps
+[ ] Настроить dev server в vue config для обновления при сохранении
+[ ] Добавить пути для media и статики
+[ ] Подключить шрифт Roboto
+[ ] TIME_ZONE = "Europe/Moscow"
 ```
