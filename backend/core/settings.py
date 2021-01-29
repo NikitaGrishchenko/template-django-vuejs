@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,6 +23,13 @@ STATIC_DIR = os.path.join(FRONTEND_DIR, "static")
 TEMPLATES_DIR = os.path.join(FRONTEND_DIR, "templates")
 DIST_DIR = os.path.join(STATIC_DIR, "dist")
 WEBPACK_STATS_FILE = os.path.join(DIST_DIR, "webpack-stats.json")
+
+# Nginx
+PUBLIC_DIR = os.path.join(PROJECT_DIR, "public")
+PRIVATE_DIR = os.path.join(PROJECT_DIR, "private")
+PUBLIC_MEDIA_DIR = os.path.join(PUBLIC_DIR, "media")
+PUBLIC_STATIC_DIR = os.path.join(PUBLIC_DIR, "static")
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/

@@ -1,6 +1,6 @@
 # Including commands
 run-django-server:
-	python ./backend/manage.py runserver
+	poetry run task server localhost:8000
 
 run-webpack-server:
 	yarn serve
@@ -8,39 +8,26 @@ run-webpack-server:
 open-localhost:
 	python -m webbrowser "http://localhost:8000"
 
-# .PHONY: clear
-# clear:
-# 	poetry run task clear
-.PHONY: venv-linux
-venv-linux:
-	python3 -m venv .venv
-	source .venv/bin/activate;
+install-backend:
+	poetry install
 
-.PHONY: venv-win
-venv-win:
-	touch .venv\Scripts\activate
+install-frontend:
+	yarn
 
 .PHONY: createadmin
 createadmin:
-	python ./backend/manage.py createsuperuser
+	poetry run task createsuperuser
 
 .PHONY: migrate
 migrate:
-	python ./backend/manage.py migrate
+	poetry run task migrate
 
 
 # Primary commands
 .PHONY: install
 install:
-	pip install -r requirements.txt
-	yarn
+	@make -j 2 install-backend install-frontend
 	@make migrate
-
-.PHONY: install-prod
-install-prod:
-	poetry install --no-root
-	yarn
-	poetry run task initconfig
 
 .PHONY: run
 run:
@@ -51,14 +38,3 @@ build:
 	yarn build
 	poetry run task collectstatic
 	@make migrate
-
-.PHONY: deploy
-deploy:
-	@make build
-	sudo systemctl restart gunicorn
-	sudo systemctl restart nginx
-
-.PHONY: docker-run
-docker-run:
-	poetry run task dockervolumes
-	docker-compose up
