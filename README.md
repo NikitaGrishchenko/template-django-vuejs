@@ -33,8 +33,10 @@ python ./backend/manage.py migrate – выполнить миграции
 ```
 [x] Пакетный менеджер poetry
 [ ] Написать скрипт для создания приложений в папке apps
-[ ] Настроить dev server в vue config для обновления при сохранении
-[ ] Добавить пути для media и статики
+[x] Настроить dev server в vue config для обновления при сохранении
+[x] Добавить пути для media и статики
 [ ] Подключить шрифт Roboto
-[ ] TIME_ZONE = "Europe/Moscow"
+[x] TIME_ZONE = "Europe/Moscow"
+[ ] добавить local setting и deploy setting
+[ ] 
 ```
