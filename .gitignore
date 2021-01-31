@@ -3,6 +3,10 @@ node_modules/
 bower_components/
 jspm_packages/
 
+# sqlite
+
+backend/*.sqlite3
+
 # Docker volumes folder
 /docker/
 /.docker/
@@ -47,5 +51,6 @@ Thumbs.db
 
 # Lock files
 Pipfile.lock
+poetry.lock
 yarn.lock
 package-lock.json

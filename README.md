@@ -38,5 +38,5 @@ python ./backend/manage.py migrate – выполнить миграции
 [ ] Подключить шрифт Roboto
 [x] TIME_ZONE = "Europe/Moscow"
 [ ] добавить local setting и deploy setting
-[ ] 
+[ ] добавить БД в gitignore
 ```
