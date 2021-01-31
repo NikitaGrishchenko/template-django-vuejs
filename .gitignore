@@ -5,7 +5,7 @@ jspm_packages/
 
 # sqlite
 
-backend/*.sqlite3
+*.sqlite3
 
 # Docker volumes folder
 /docker/
