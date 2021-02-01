@@ -26,7 +26,7 @@ urlpatterns = [
     path("dj-admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
     path("auth/", include("django.contrib.auth.urls")),
-    path("auth/", include("apps.user_auth.urls")),
+    path("auth/", include("apps.base.urls")),
     path("<slug:template>/", PageLoaderView.as_view(), name="page"),
     path(
         "",

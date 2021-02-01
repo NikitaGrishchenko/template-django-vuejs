@@ -5,6 +5,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 CONFIG_DIR = os.path.dirname(os.path.abspath(__file__))
 BACKEND_DIR = os.path.dirname(CONFIG_DIR)
+APPS_DIR = os.path.join(BACKEND_DIR, "apps")
 PROJECT_DIR = os.path.dirname(BACKEND_DIR)
 FRONTEND_DIR = os.path.join(PROJECT_DIR, "frontend")
 STATIC_DIR = os.path.join(FRONTEND_DIR, "static")
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     "webpack_loader",
     "rest_framework",
     "widget_tweaks",
-    "apps.user_auth",
+    "apps.base",
 ]
 
 MIDDLEWARE = [

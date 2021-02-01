@@ -32,6 +32,7 @@ collectstatic = "python ./backend/manage.py collectstatic --noinput"
 gunicorn = "gunicorn --timeout 300 --chdir ./backend core.wsgi:application -b 0.0.0.0:8000"
 defaultadmin = "python ./backend/manage.py defaultadmin"
 defaultfixtures = "python ./backend/manage.py defaultfixtures"
+createapp = "python ./backend/manage.py createapp"
 
 
 [tool.poetry.dependencies]
