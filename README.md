@@ -5,7 +5,7 @@ make install – установка всех зависимостей
 make run – запуск серверов
 make createadmin – создание админа
 make migrate – миграции
-make createapp name=NAME_APP
+make createapp name=NAME_APP - создание нового приложение (вместо NAME_APP название будущего приложения)
 
 
 
@@ -16,7 +16,7 @@ python ./backend/manage.py migrate - пример обращения к manage.p
 ```
 [x] Пакетный менеджер poetry
 [x] Написать скрипт для создания приложений в папке apps
-  [ ] Добавить TEMPLATE для нового приложения с v1, templatetags
+  [x] Добавить TEMPLATE для нового приложения с v1, templatetags
 [ ] env файл
   [ ] Скрипт создание дефолтного админа
 [x] Настроить dev server в vue config для обновления при сохранении
