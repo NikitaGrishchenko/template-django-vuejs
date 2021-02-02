@@ -20,9 +20,9 @@ class Command(BaseCommand):
         name = options["name"]
         path_to_folder = os.path.join(settings.APPS_DIR)
         path = os.path.join(path_to_folder, name)
-        print(path)
+        template = settings.APP_TEMPLATE
         if not os.path.exists(path):
             os.mkdir(path)
         management.call_command(
-            "startapp", name, path
+            "startapp", name, path, f"--template={template}"
         )

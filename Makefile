@@ -22,6 +22,9 @@ createadmin:
 migrate:
 	poetry run task migrate
 
+.PHONY: createapp $(name)
+createapp:
+	poetry run task createapp $(name)
 
 # Primary commands
 .PHONY: install

@@ -20,6 +20,8 @@ PRIVATE_DIR = os.path.join(PROJECT_DIR, "private")
 PUBLIC_MEDIA_DIR = os.path.join(PUBLIC_DIR, "media")
 PUBLIC_STATIC_DIR = os.path.join(PUBLIC_DIR, "static")
 
+APP_TEMPLATE = os.path.join(APPS_DIR, "base", "management", "template.zip")
+
 
 SECRET_KEY = "7ih8a1tz&91#kd9k0y^!bjdlp(5lu))%h0rf*v-=8olgs@1!q3"
 
