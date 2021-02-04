@@ -1,9 +1,6 @@
 import os
 from pathlib import Path
 
-# DEBUG = True
-
-
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 BACKEND_DIR = Path(__file__).resolve().parent.parent.parent
 APPS_DIR = os.path.join(BACKEND_DIR, "apps")
@@ -15,6 +12,7 @@ DIST_DIR = os.path.join(STATIC_DIR, "dist")
 WEBPACK_STATS_FILE = os.path.join(DIST_DIR, "webpack-stats.json")
 PUBLIC_MEDIA_DIR = os.path.join(STATIC_DIR, "media")
 APP_TEMPLATE = os.path.join(APPS_DIR, "base", "management", "template.zip")
+ENV_FILE = os.path.join(PROJECT_DIR, ".env")
 
 # Nginx
 PUBLIC_DIR = os.path.join(PROJECT_DIR, "public")

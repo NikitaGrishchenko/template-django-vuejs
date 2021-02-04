@@ -1,6 +1,8 @@
-from .common import *
 
-DEBUG = True
+from .common import *
+from .environment import *
+
+DEBUG = env('DEBUG', default=True)
 
 if DEBUG:
     from .local import *
