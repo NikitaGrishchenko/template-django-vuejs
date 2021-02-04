@@ -17,12 +17,12 @@ python ./backend/manage.py migrate - пример обращения к manage.p
 [x] Пакетный менеджер poetry
 [x] Написать скрипт для создания приложений в папке apps
   [x] Добавить TEMPLATE для нового приложения с v1, templatetags
-[ ] env файл
+[ ] разбить настройки на локальные и прод
+  [ ] env файл
   [ ] Скрипт создание дефолтного админа
 [x] Настроить dev server в vue config для обновления при сохранении
 [x] Добавить пути для media и статики
 [ ] Подключить шрифт Roboto
 [x] TIME_ZONE = "Europe/Moscow"
-[ ] добавить local setting и deploy setting
 [x] добавить БД в gitignore
 ```

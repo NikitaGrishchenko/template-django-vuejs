@@ -1,10 +1,11 @@
 import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-CONFIG_DIR = os.path.dirname(os.path.abspath(__file__))
-BACKEND_DIR = os.path.dirname(CONFIG_DIR)
+# DEBUG = True
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BACKEND_DIR = Path(__file__).resolve().parent.parent.parent
 APPS_DIR = os.path.join(BACKEND_DIR, "apps")
 PROJECT_DIR = os.path.dirname(BACKEND_DIR)
 FRONTEND_DIR = os.path.join(PROJECT_DIR, "frontend")
@@ -13,22 +14,13 @@ TEMPLATES_DIR = os.path.join(FRONTEND_DIR, "templates")
 DIST_DIR = os.path.join(STATIC_DIR, "dist")
 WEBPACK_STATS_FILE = os.path.join(DIST_DIR, "webpack-stats.json")
 PUBLIC_MEDIA_DIR = os.path.join(STATIC_DIR, "media")
+APP_TEMPLATE = os.path.join(APPS_DIR, "base", "management", "template.zip")
 
 # Nginx
 PUBLIC_DIR = os.path.join(PROJECT_DIR, "public")
-PRIVATE_DIR = os.path.join(PROJECT_DIR, "private")
 PUBLIC_MEDIA_DIR = os.path.join(PUBLIC_DIR, "media")
 PUBLIC_STATIC_DIR = os.path.join(PUBLIC_DIR, "static")
 
-APP_TEMPLATE = os.path.join(APPS_DIR, "base", "management", "template.zip")
-
-
-SECRET_KEY = "7ih8a1tz&91#kd9k0y^!bjdlp(5lu))%h0rf*v-=8olgs@1!q3"
-
-
-DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
@@ -75,13 +67,6 @@ TEMPLATES = [
 WSGI_APPLICATION = "core.wsgi.application"
 
 
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
 
 
 AUTH_PASSWORD_VALIDATORS = [
