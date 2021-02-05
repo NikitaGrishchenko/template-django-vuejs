@@ -30,8 +30,8 @@ createapp:
 .PHONY: install
 install:
 	@make -j 2 install-backend install-frontend
-	poetry run task defaultadmin
 	@make migrate
+	poetry run task defaultadmin
 
 .PHONY: run
 run:
