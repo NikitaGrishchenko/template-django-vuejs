@@ -22,15 +22,18 @@ from django.views.generic import TemplateView
 
 from .views import HomeView, PageLoaderView
 
-urlpatterns = [
+urlpatterns = (
+    [
     path("dj-admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
     path("auth/", include("django.contrib.auth.urls")),
-    path("auth/", include("apps.user_auth.urls")),
+    path("auth/", include("apps.base.urls")),
     path("<slug:template>/", PageLoaderView.as_view(), name="page"),
     path(
         "",
         HomeView.as_view(template_name="index.html"),
         name="home",
     ),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+      + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+)

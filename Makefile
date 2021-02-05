@@ -22,12 +22,16 @@ createadmin:
 migrate:
 	poetry run task migrate
 
+.PHONY: createapp $(name)
+createapp:
+	poetry run task createapp $(name)
 
 # Primary commands
 .PHONY: install
 install:
 	@make -j 2 install-backend install-frontend
 	@make migrate
+	poetry run task defaultadmin
 
 .PHONY: run
 run:
