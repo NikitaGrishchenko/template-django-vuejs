@@ -1,13 +1,15 @@
-SECRET_KEY = "7ih8a1tz&91#kd9k0y^!bjdlp(5lu))%h0rf*v-=8olgs@1!q3"
+from .environment import env
 
-ALLOWED_HOSTS = ["*"]
+SECRET_KEY = env('SECRET_KEY')
+
+ALLOWED_HOSTS = list(map(str.strip, env("SITE_DOMAIN").split(',')))
 
 DATABASES = {
     "default": {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django_db',
-        'USER' : 'user_name',
-        'PASSWORD' : 'password',
+        'NAME': env("POSTGRES_DB"),
+        'USER': env("POSTGRES_USER"),
+        'PASSWORD': env("POSTGRES_PASSWORD"),
         'HOST' : 'localhost',
         'PORT' : '5432',
     }

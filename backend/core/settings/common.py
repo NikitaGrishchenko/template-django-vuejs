@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 
+from .environment import env
+
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 BACKEND_DIR = Path(__file__).resolve().parent.parent.parent
 APPS_DIR = os.path.join(BACKEND_DIR, "apps")
@@ -19,6 +21,10 @@ PUBLIC_DIR = os.path.join(PROJECT_DIR, "public")
 PUBLIC_MEDIA_DIR = os.path.join(PUBLIC_DIR, "media")
 PUBLIC_STATIC_DIR = os.path.join(PUBLIC_DIR, "static")
 
+# Admin
+ADMIN_USERNAME = env("ADMIN_USERNAME", default=None)
+ADMIN_PASSWORD = env("ADMIN_PASSWORD", default=None)
+ADMIN_EMAIL = env("ADMIN_EMAIL", default=None)
 
 
 INSTALLED_APPS = [

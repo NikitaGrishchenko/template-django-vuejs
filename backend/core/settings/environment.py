@@ -2,7 +2,10 @@ import os
 
 import environ
 
-from .common import ENV_FILE
+PROJECT_DIR = os.path.dirname(os.path.dirname(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+)
+ENV_FILE = os.path.join(PROJECT_DIR, ".env")
 
 env = environ.Env(
     DEBUG=(bool, True)

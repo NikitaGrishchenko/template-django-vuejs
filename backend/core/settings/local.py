@@ -1,4 +1,5 @@
 from .common import BACKEND_DIR
+from .environment import env
 
 DATABASES = {
     "default": {
@@ -8,7 +9,7 @@ DATABASES = {
 }
 
 
-SECRET_KEY = "7ih8a1tz&91#kd9k0y^!bjdlp(5lu))%h0rf*v-=8olgs@1!q3"
+SECRET_KEY = env('SECRET_KEY')
 
 ALLOWED_HOSTS = ["*"]
 
