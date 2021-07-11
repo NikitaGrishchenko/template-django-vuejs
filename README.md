@@ -22,7 +22,9 @@ python ./backend/manage.py migrate - пример обращения к manage.p
   [x] Скрипт создание дефолтного админа
 [x] Настроить dev server в vue config для обновления при сохранении
 [x] Добавить пути для media и статики
-[ ] Подключить шрифт Roboto
 [x] TIME_ZONE = "Europe/Moscow"
 [x] добавить БД в gitignore
+[ ] убрать возможность использования django на фронте
+[ ] сделать авторизацию через post запрос
+[ ] поставить framework (vuetify, quasar...)
 ```
